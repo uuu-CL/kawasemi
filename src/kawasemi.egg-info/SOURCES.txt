@@ -2,6 +2,7 @@ README.md
 setup.cfg
 setup.py
 src/kawasemi/__init__.py
+src/kawasemi/download.py
 src/kawasemi/kawasemi.py
 src/kawasemi/load.py
 src/kawasemi/models.py

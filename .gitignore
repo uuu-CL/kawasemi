@@ -1,5 +1,7 @@
 *~
 *.pyc
+*.zip
 __pycache__/
+data/orig/
 .eggs/
 .pytest_cache/
