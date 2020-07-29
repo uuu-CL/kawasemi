@@ -9,7 +9,7 @@ from .download import download_file, extract_zip
 def kansuji_to_num(x):
     result = 0
     nums = [int(unicodedata.numeric(l)) for l in x[:]]
-    nums2 = []
+    nums2 = [nums.pop(0)]
     
     for n in nums:
         if n < 10:

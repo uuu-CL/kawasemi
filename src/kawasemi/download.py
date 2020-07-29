@@ -1,10 +1,12 @@
 import os
 import requests
 import zipfile
+import time
 
 def download_file(url, indir):
     try:
         r = requests.get(url, stream=True)
+        time.sleep(3)
     except:
         print('Could not download the original XML file from the e-Gov site.')
         exit()
