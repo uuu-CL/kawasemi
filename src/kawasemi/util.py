@@ -5,6 +5,7 @@ import unicodedata
 import re
 from . import models
 from .download import download_file, extract_zip
+from .XML import orig_XML_to_doc_obj
 
 def kansuji_to_num(x):
     result = 0
@@ -49,15 +50,15 @@ def read_abbr(filename=None):
     return law2Jid, law2id
 
 def create_parsed_xml(xmltree):
-    print('creating parsed xml...')
-    tree = None
-
-
-
+    print('creating parsed xml...')    
+    doc = orig_XML_to_doc_obj(xmltree)
+    print(len(doc.sentences))
+    print(doc.sentences[100].text)
 
 
     
     
+    tree = None    
     return tree
 
 
