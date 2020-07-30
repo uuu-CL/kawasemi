@@ -9,6 +9,7 @@ src/kawasemi/load.py
 src/kawasemi/models.py
 src/kawasemi/tokens.py
 src/kawasemi/util.py
+src/kawasemi/xml.py
 src/kawasemi.egg-info/PKG-INFO
 src/kawasemi.egg-info/SOURCES.txt
 src/kawasemi.egg-info/dependency_links.txt
