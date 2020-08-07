@@ -1,11 +1,37 @@
 from pyknp import Juman, KNP
 
 class JNLP(object):
+    '''Japanese parser class.
+    '''
     def __init__(self):
+        '''initialize
+
+        Args:
+          Nothing
+
+        Returns:
+          Nothing
+
+        Examples:
+          nlp = JNLP()
+        '''
+        
         self.juman = Juman()
         self.KNP = KNP(option='-tab -anaphora')
         
     def POStagger(self, text):
+        '''annotate a input text with POS tags.
+
+        Args:
+          text (str): a text which should be tokenized
+
+        Returns:
+          mrphs (List[str]): a list of tokens
+
+        Examples:
+          a = nlp.POStagger('この文を解析します。')
+        '''
+        
         result = self.juman.analysis(text)
         mrphs = [mrph.midasi for mrph in result.mrph_list()]
         return mrphs

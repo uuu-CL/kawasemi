@@ -22,8 +22,23 @@ def kansuji_to_num(x):
     return result
     
 def Jid_to_id(x):
-    '''Convert a string such as  '明治二十九年法律第八十九号' to the id such as '129AC0000000089'
-'''
+    '''Convert 
+
+    a string such as  '明治二十九年法律第八十九号' to the id such as '129AC0000000089'
+
+    Parameters
+    ----------
+    param1 : int
+        The first parameter.
+    param2 : str
+        The second parameter.
+
+    Returns
+    -------
+    bool
+        True if successful, False otherwise.
+    '''
+    
     era2id = {'明治': 1, '大正': 2, '昭和': 3, '平成': 4, '令和': 5}
     lawtype2id = {'法律': 'AC'}
     
