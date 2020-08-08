@@ -4,8 +4,6 @@ setup.py
 src/kawasemi/XML.py
 src/kawasemi/__init__.py
 src/kawasemi/download.py
-src/kawasemi/kawasemi.py
-src/kawasemi/load.py
 src/kawasemi/models.py
 src/kawasemi/tokens.py
 src/kawasemi/util.py

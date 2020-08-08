@@ -12,22 +12,6 @@ kawasemi.download module
    :undoc-members:
    :show-inheritance:
 
-kawasemi.kawasemi module
-------------------------
-
-.. automodule:: kawasemi.kawasemi
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-kawasemi.load module
---------------------
-
-.. automodule:: kawasemi.load
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 kawasemi.models module
 ----------------------
 

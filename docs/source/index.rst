@@ -8,9 +8,9 @@ Welcome to kawasemi's documentation!
 
 .. toctree::
    :maxdepth: 2
-   :caption: Main modules
+   :caption: submodules of kawasemi
 
-   modules
+   kawasemi
 
 Indices and tables
 ==================

@@ -1,0 +1,353 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>kawasemi.tokens &mdash; kawasemi 0.1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> kawasemi
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">submodules of kawasemi</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../kawasemi.html">kawasemi package</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">kawasemi</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../kawasemi.html">kawasemi</a> &raquo;</li>
+        
+      <li>kawasemi.tokens</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for kawasemi.tokens</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">pyknp</span> <span class="kn">import</span> <span class="n">Juman</span><span class="p">,</span> <span class="n">KNP</span>
+
+<div class="viewcode-block" id="JNLP"><a class="viewcode-back" href="../../kawasemi.html#kawasemi.tokens.JNLP">[docs]</a><span class="k">class</span> <span class="nc">JNLP</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39;Japanese parser class.</span>
+
+<span class="sd">    annotate a input text with POS tags.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;initialize</span>
+
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        &gt;&gt;&gt; nlp = JNLP()</span>
+<span class="sd">        None</span>
+
+<span class="sd">        &#39;&#39;&#39;</span>
+        
+        <span class="bp">self</span><span class="o">.</span><span class="n">juman</span> <span class="o">=</span> <span class="n">Juman</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">KNP</span> <span class="o">=</span> <span class="n">KNP</span><span class="p">(</span><span class="n">option</span><span class="o">=</span><span class="s1">&#39;-tab -anaphora&#39;</span><span class="p">)</span>
+        
+<div class="viewcode-block" id="JNLP.POStagger"><a class="viewcode-back" href="../../kawasemi.html#kawasemi.tokens.JNLP.POStagger">[docs]</a>    <span class="k">def</span> <span class="nf">POStagger</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;annotate a input text with POS tags.</span>
+
+<span class="sd">        annotate a input text with POS tags.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        text : str</span>
+<span class="sd">          a text which should be tokenized</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        List[str]</span>
+<span class="sd">          a list of tokens</span>
+
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        &gt;&gt;&gt;a = nlp.POStagger(&#39;この文を解析します。&#39;)</span>
+<span class="sd">        &lt;object&gt;</span>
+
+<span class="sd">        &#39;&#39;&#39;</span>
+        
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">juman</span><span class="o">.</span><span class="n">analysis</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+        <span class="n">mrphs</span> <span class="o">=</span> <span class="p">[</span><span class="n">mrph</span><span class="o">.</span><span class="n">midasi</span> <span class="k">for</span> <span class="n">mrph</span> <span class="ow">in</span> <span class="n">result</span><span class="o">.</span><span class="n">mrph_list</span><span class="p">()]</span>
+        <span class="k">return</span> <span class="n">mrphs</span></div>
+
+<div class="viewcode-block" id="JNLP.parse"><a class="viewcode-back" href="../../kawasemi.html#kawasemi.tokens.JNLP.parse">[docs]</a>    <span class="k">def</span> <span class="nf">parse</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;annotate a input text with POS tags.</span>
+
+<span class="sd">        annotate a input text with POS tags.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        text : str</span>
+<span class="sd">          a text which should be tokenized</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        List[str]</span>
+<span class="sd">          a list of tokens</span>
+
+<span class="sd">        Examples</span>
+<span class="sd">        --------</span>
+<span class="sd">        &gt;&gt;&gt;a = nlp.POStagger(&#39;この文を解析します。&#39;)</span>
+<span class="sd">        &lt;object&gt;</span>
+
+<span class="sd">        &#39;&#39;&#39;</span>
+        
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">knp</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">bnst</span> <span class="ow">in</span> <span class="n">result</span><span class="o">.</span><span class="n">bnst_list</span><span class="p">():</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">bnst</span><span class="o">.</span><span class="n">bnst_id</span><span class="p">,</span> <span class="n">bnst</span><span class="o">.</span><span class="n">dpndtype</span><span class="p">,</span> <span class="n">bnst</span><span class="o">.</span><span class="n">parent_id</span><span class="p">,</span> <span class="n">bnst</span><span class="o">.</span><span class="n">fstring</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">mrph</span><span class="o">.</span><span class="n">midasi</span> <span class="k">for</span> <span class="n">mrph</span> <span class="ow">in</span> <span class="n">bnst</span><span class="o">.</span><span class="n">mrph_list</span><span class="p">()]))</span>
+        <span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">result</span><span class="o">.</span><span class="n">tag_list</span><span class="p">():</span>
+            <span class="nb">print</span><span class="p">(</span><span class="n">tag</span><span class="o">.</span><span class="n">tag_id</span><span class="p">,</span> <span class="n">tag</span><span class="o">.</span><span class="n">dpndtype</span><span class="p">,</span> <span class="n">tag</span><span class="o">.</span><span class="n">parent_id</span><span class="p">,</span> <span class="n">tag</span><span class="o">.</span><span class="n">fstring</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">mrph</span><span class="o">.</span><span class="n">midasi</span> <span class="k">for</span> <span class="n">mrph</span> <span class="ow">in</span> <span class="n">tag</span><span class="o">.</span><span class="n">mrph_list</span><span class="p">()]))</span>
+            <span class="k">if</span> <span class="n">tag</span><span class="o">.</span><span class="n">pas</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">tag</span><span class="o">.</span><span class="n">pas</span><span class="o">.</span><span class="n">arguments</span><span class="p">:</span>
+                    <span class="n">arg</span> <span class="o">=</span> <span class="n">tag</span><span class="o">.</span><span class="n">pas</span><span class="o">.</span><span class="n">arguments</span><span class="p">[</span><span class="n">key</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="n">arg</span><span class="o">.</span><span class="n">tid</span><span class="p">,</span> <span class="n">arg</span><span class="o">.</span><span class="n">eid</span><span class="p">,</span> <span class="n">arg</span><span class="o">.</span><span class="n">midasi</span><span class="p">,</span> <span class="n">arg</span><span class="o">.</span><span class="n">flag</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span></div></div>
+
+<div class="viewcode-block" id="Event"><a class="viewcode-back" href="../../kawasemi.html#kawasemi.tokens.Event">[docs]</a><span class="k">class</span> <span class="nc">Event</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">core</span> <span class="o">=</span> <span class="n">text</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">arguments</span> <span class="o">=</span> <span class="p">[]</span>
+        
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">core</span></div>
+    
+<div class="viewcode-block" id="Token"><a class="viewcode-back" href="../../kawasemi.html#kawasemi.tokens.Token">[docs]</a><span class="k">class</span> <span class="nc">Token</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">text</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">neg_exp</span> <span class="o">=</span> <span class="kc">None</span> <span class="c1"># 否定語かどうか</span>
+        
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">text</span></div>
+
+<div class="viewcode-block" id="BNST"><a class="viewcode-back" href="../../kawasemi.html#kawasemi.tokens.BNST">[docs]</a><span class="k">class</span> <span class="nc">BNST</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">text</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tokens</span> <span class="o">=</span> <span class="p">[]</span>
+        
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">text</span></div>
+
+<div class="viewcode-block" id="Sentence"><a class="viewcode-back" href="../../kawasemi.html#kawasemi.tokens.Sentence">[docs]</a><span class="k">class</span> <span class="nc">Sentence</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">text</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tokens</span> <span class="o">=</span> <span class="p">[]</span>
+        
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">text</span>    </div>
+
+<div class="viewcode-block" id="Paragraph"><a class="viewcode-back" href="../../kawasemi.html#kawasemi.tokens.Paragraph">[docs]</a><span class="k">class</span> <span class="nc">Paragraph</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">text</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tokens</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sentences</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">text</span></div>
+
+<div class="viewcode-block" id="Article"><a class="viewcode-back" href="../../kawasemi.html#kawasemi.tokens.Article">[docs]</a><span class="k">class</span> <span class="nc">Article</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">aid</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">aid</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">text</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tokens</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sentences</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">paragraphs</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">text</span></div>
+
+<div class="viewcode-block" id="Document"><a class="viewcode-back" href="../../kawasemi.html#kawasemi.tokens.Document">[docs]</a><span class="k">class</span> <span class="nc">Document</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">text</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tokens</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">sentences</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">paragraphs</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">text</span>    </div>
+        
+<div class="viewcode-block" id="Statute"><a class="viewcode-back" href="../../kawasemi.html#kawasemi.tokens.Statute">[docs]</a><span class="k">class</span> <span class="nc">Statute</span><span class="p">(</span><span class="n">Document</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">articles</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">text</span>    </div>
+        
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Suguru Matsuyoshi
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -36,7 +36,7 @@
     
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="kawasemi" href="modules.html" /> 
+    <link rel="prev" title="Welcome to kawasemi’s documentation!" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav">
@@ -81,21 +81,16 @@
               
             
             
-              <p class="caption"><span class="caption-text">Main modules</span></p>
+              <p class="caption"><span class="caption-text">submodules of kawasemi</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="modules.html">kawasemi</a><ul class="current">
-<li class="toctree-l2 current"><a class="current reference internal" href="#">kawasemi package</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-kawasemi.download">kawasemi.download module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-kawasemi.kawasemi">kawasemi.kawasemi module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-kawasemi.load">kawasemi.load module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-kawasemi.models">kawasemi.models module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-kawasemi.tokens">kawasemi.tokens module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-kawasemi.util">kawasemi.util module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-kawasemi.xml">kawasemi.xml module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-kawasemi">Module contents</a></li>
-</ul>
-</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">kawasemi package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-kawasemi.download">kawasemi.download module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-kawasemi.models">kawasemi.models module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-kawasemi.tokens">kawasemi.tokens module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-kawasemi.util">kawasemi.util module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-kawasemi.xml">kawasemi.xml module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-kawasemi">Module contents</a></li>
 </ul>
 </li>
 </ul>
@@ -144,8 +139,6 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="modules.html">kawasemi</a> &raquo;</li>
-        
       <li>kawasemi package</li>
     
     
@@ -172,54 +165,84 @@
 </div>
 <div class="section" id="module-kawasemi.download">
 <span id="kawasemi-download-module"></span><h2>kawasemi.download module<a class="headerlink" href="#module-kawasemi.download" title="Permalink to this headline">¶</a></h2>
+<p>This module provides functions for downloading files from web sites.</p>
 <dl class="py function">
 <dt id="kawasemi.download.download_file">
-<code class="sig-prename descclassname">kawasemi.download.</code><code class="sig-name descname">download_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span></em>, <em class="sig-param"><span class="n">indir</span></em><span class="sig-paren">)</span><a class="headerlink" href="#kawasemi.download.download_file" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="sig-prename descclassname">kawasemi.download.</code><code class="sig-name descname">download_file</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">url</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">indir</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; str<a class="reference internal" href="_modules/kawasemi/download.html#download_file"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kawasemi.download.download_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Download a file at a given URL and save it in a given directory.</p>
+<p>This function downloads a file from a web site and saves it in a directory. Then it returns the file path.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>url</strong><span class="classifier">str</span></dt><dd><p>A string of a URL.</p>
+</dd>
+<dt><strong>indir</strong><span class="classifier">str</span></dt><dd><p>A directory name which will contain the downloaded file.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>str</dt><dd><p>The file path of the downloaded file.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;http://example/aaaa.zip&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">indir</span> <span class="o">=</span> <span class="s1">&#39;/home/x/y/&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">kawasemi</span><span class="o">.</span><span class="n">download</span><span class="o">.</span><span class="n">download_file</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">indir</span><span class="p">)</span>
+<span class="go">/home/x/y/aaaa.zip</span>
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py function">
 <dt id="kawasemi.download.extract_zip">
-<code class="sig-prename descclassname">kawasemi.download.</code><code class="sig-name descname">extract_zip</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">zipname</span></em><span class="sig-paren">)</span><a class="headerlink" href="#kawasemi.download.extract_zip" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
+<code class="sig-prename descclassname">kawasemi.download.</code><code class="sig-name descname">extract_zip</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">zipname</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; None<a class="reference internal" href="_modules/kawasemi/download.html#extract_zip"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kawasemi.download.extract_zip" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unzip a file.</p>
+<p>This function unzips a given zip file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>zipname</strong><span class="classifier">str</span></dt><dd><p>A zip file from which you want to extract files.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>None</dt><dd><p>None.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">kawasemi</span><span class="o">.</span><span class="n">download</span><span class="o">.</span><span class="n">extract_zip</span><span class="p">(</span><span class="s1">&#39;./aaaa.zip&#39;</span><span class="p">)</span>
+</pre></div>
 </div>
-<div class="section" id="module-kawasemi.kawasemi">
-<span id="kawasemi-kawasemi-module"></span><h2>kawasemi.kawasemi module<a class="headerlink" href="#module-kawasemi.kawasemi" title="Permalink to this headline">¶</a></h2>
-<dl class="py function">
-<dt id="kawasemi.kawasemi.main">
-<code class="sig-prename descclassname">kawasemi.kawasemi.</code><code class="sig-name descname">main</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kawasemi.kawasemi.main" title="Permalink to this definition">¶</a></dt>
-<dd><p>ないゆ</p>
 </dd></dl>
-
-</div>
-<div class="section" id="module-kawasemi.load">
-<span id="kawasemi-load-module"></span><h2>kawasemi.load module<a class="headerlink" href="#module-kawasemi.load" title="Permalink to this headline">¶</a></h2>
-<dl class="py class">
-<dt id="kawasemi.load.NLP">
-<em class="property">class </em><code class="sig-prename descclassname">kawasemi.load.</code><code class="sig-name descname">NLP</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#kawasemi.load.NLP" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<dl class="py method">
-<dt id="kawasemi.load.NLP.show">
-<code class="sig-name descname">show</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kawasemi.load.NLP.show" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-</dd></dl>
-
-<dl class="py function">
-<dt id="kawasemi.load.load">
-<code class="sig-prename descclassname">kawasemi.load.</code><code class="sig-name descname">load</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span></em><span class="sig-paren">)</span><a class="headerlink" href="#kawasemi.load.load" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
 
 </div>
 <div class="section" id="module-kawasemi.models">
 <span id="kawasemi-models-module"></span><h2>kawasemi.models module<a class="headerlink" href="#module-kawasemi.models" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="kawasemi.models.Statute">
-<em class="property">class </em><code class="sig-prename descclassname">kawasemi.models.</code><code class="sig-name descname">Statute</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#kawasemi.models.Statute" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">kawasemi.models.</code><code class="sig-name descname">Statute</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kawasemi/models.html#Statute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kawasemi.models.Statute" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p class="rubric">Methods</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 55%" />
+<col style="width: 45%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><strong>get_text</strong></p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
 <dl class="py method">
 <dt id="kawasemi.models.Statute.get_text">
-<code class="sig-name descname">get_text</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kawasemi.models.Statute.get_text" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">get_text</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/kawasemi/models.html#Statute.get_text"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kawasemi.models.Statute.get_text" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -229,159 +252,298 @@
 <span id="kawasemi-tokens-module"></span><h2>kawasemi.tokens module<a class="headerlink" href="#module-kawasemi.tokens" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt id="kawasemi.tokens.Article">
-<em class="property">class </em><code class="sig-prename descclassname">kawasemi.tokens.</code><code class="sig-name descname">Article</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em>, <em class="sig-param"><span class="n">aid</span></em><span class="sig-paren">)</span><a class="headerlink" href="#kawasemi.tokens.Article" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">kawasemi.tokens.</code><code class="sig-name descname">Article</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em>, <em class="sig-param"><span class="n">aid</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kawasemi/tokens.html#Article"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kawasemi.tokens.Article" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 </dd></dl>
 
 <dl class="py class">
 <dt id="kawasemi.tokens.BNST">
-<em class="property">class </em><code class="sig-prename descclassname">kawasemi.tokens.</code><code class="sig-name descname">BNST</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#kawasemi.tokens.BNST" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">kawasemi.tokens.</code><code class="sig-name descname">BNST</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kawasemi/tokens.html#BNST"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kawasemi.tokens.BNST" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 </dd></dl>
 
 <dl class="py class">
 <dt id="kawasemi.tokens.Document">
-<em class="property">class </em><code class="sig-prename descclassname">kawasemi.tokens.</code><code class="sig-name descname">Document</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#kawasemi.tokens.Document" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">kawasemi.tokens.</code><code class="sig-name descname">Document</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kawasemi/tokens.html#Document"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kawasemi.tokens.Document" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 </dd></dl>
 
 <dl class="py class">
 <dt id="kawasemi.tokens.Event">
-<em class="property">class </em><code class="sig-prename descclassname">kawasemi.tokens.</code><code class="sig-name descname">Event</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#kawasemi.tokens.Event" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">kawasemi.tokens.</code><code class="sig-name descname">Event</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kawasemi/tokens.html#Event"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kawasemi.tokens.Event" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 </dd></dl>
 
 <dl class="py class">
 <dt id="kawasemi.tokens.JNLP">
-<em class="property">class </em><code class="sig-prename descclassname">kawasemi.tokens.</code><code class="sig-name descname">JNLP</code><a class="headerlink" href="#kawasemi.tokens.JNLP" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">kawasemi.tokens.</code><code class="sig-name descname">JNLP</code><a class="reference internal" href="_modules/kawasemi/tokens.html#JNLP"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kawasemi.tokens.JNLP" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Japanese parser class.</p>
+<p>annotate a input text with POS tags.</p>
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#kawasemi.tokens.JNLP.POStagger" title="kawasemi.tokens.JNLP.POStagger"><code class="xref py py-obj docutils literal notranslate"><span class="pre">POStagger</span></code></a>(text)</p></td>
+<td><p>annotate a input text with POS tags.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#kawasemi.tokens.JNLP.parse" title="kawasemi.tokens.JNLP.parse"><code class="xref py py-obj docutils literal notranslate"><span class="pre">parse</span></code></a>(text)</p></td>
+<td><p>annotate a input text with POS tags.</p></td>
+</tr>
+</tbody>
+</table>
 <dl class="py method">
 <dt id="kawasemi.tokens.JNLP.POStagger">
-<code class="sig-name descname">POStagger</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#kawasemi.tokens.JNLP.POStagger" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">POStagger</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kawasemi/tokens.html#JNLP.POStagger"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kawasemi.tokens.JNLP.POStagger" title="Permalink to this definition">¶</a></dt>
 <dd><p>annotate a input text with POS tags.</p>
+<p>annotate a input text with POS tags.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>text</strong> (<em>str</em>) – a text which should be tokenized</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>text</strong><span class="classifier">str</span></dt><dd><p>a text which should be tokenized</p>
+</dd>
+</dl>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>a list of tokens</p>
+<dd class="field-even"><dl class="simple">
+<dt>List[str]</dt><dd><p>a list of tokens</p>
 </dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>mrphs (List[str])</p>
+</dl>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<p>a = nlp.POStagger(‘この文を解析します。’)</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="kawasemi.tokens.JNLP.__init__">
-<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#kawasemi.tokens.JNLP.__init__" title="Permalink to this definition">¶</a></dt>
-<dd><p>initialize</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>Nothing</strong> – </p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Nothing</p>
-</dd>
-</dl>
-<p class="rubric">Examples</p>
-<p>nlp = JNLP()</p>
+<p>&gt;&gt;&gt;a = nlp.POStagger(‘この文を解析します。’)
+&lt;object&gt;</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="kawasemi.tokens.JNLP.parse">
-<code class="sig-name descname">parse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#kawasemi.tokens.JNLP.parse" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="sig-name descname">parse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kawasemi/tokens.html#JNLP.parse"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kawasemi.tokens.JNLP.parse" title="Permalink to this definition">¶</a></dt>
+<dd><p>annotate a input text with POS tags.</p>
+<p>annotate a input text with POS tags.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>text</strong><span class="classifier">str</span></dt><dd><p>a text which should be tokenized</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>List[str]</dt><dd><p>a list of tokens</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>&gt;&gt;&gt;a = nlp.POStagger(‘この文を解析します。’)
+&lt;object&gt;</p>
+</dd></dl>
 
 </dd></dl>
 
 <dl class="py class">
 <dt id="kawasemi.tokens.Paragraph">
-<em class="property">class </em><code class="sig-prename descclassname">kawasemi.tokens.</code><code class="sig-name descname">Paragraph</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#kawasemi.tokens.Paragraph" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">kawasemi.tokens.</code><code class="sig-name descname">Paragraph</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kawasemi/tokens.html#Paragraph"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kawasemi.tokens.Paragraph" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 </dd></dl>
 
 <dl class="py class">
 <dt id="kawasemi.tokens.Sentence">
-<em class="property">class </em><code class="sig-prename descclassname">kawasemi.tokens.</code><code class="sig-name descname">Sentence</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#kawasemi.tokens.Sentence" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">kawasemi.tokens.</code><code class="sig-name descname">Sentence</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kawasemi/tokens.html#Sentence"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kawasemi.tokens.Sentence" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 </dd></dl>
 
 <dl class="py class">
 <dt id="kawasemi.tokens.Statute">
-<em class="property">class </em><code class="sig-prename descclassname">kawasemi.tokens.</code><code class="sig-name descname">Statute</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#kawasemi.tokens.Statute" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">kawasemi.tokens.</code><code class="sig-name descname">Statute</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kawasemi/tokens.html#Statute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kawasemi.tokens.Statute" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <a class="reference internal" href="#kawasemi.tokens.Document" title="kawasemi.tokens.Document"><code class="xref py py-class docutils literal notranslate"><span class="pre">kawasemi.tokens.Document</span></code></a></p>
 </dd></dl>
 
 <dl class="py class">
 <dt id="kawasemi.tokens.Token">
-<em class="property">class </em><code class="sig-prename descclassname">kawasemi.tokens.</code><code class="sig-name descname">Token</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="headerlink" href="#kawasemi.tokens.Token" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-prename descclassname">kawasemi.tokens.</code><code class="sig-name descname">Token</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">text</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kawasemi/tokens.html#Token"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kawasemi.tokens.Token" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 </dd></dl>
 
 </div>
 <div class="section" id="module-kawasemi.util">
 <span id="kawasemi-util-module"></span><h2>kawasemi.util module<a class="headerlink" href="#module-kawasemi.util" title="Permalink to this headline">¶</a></h2>
+<p>This module contains utility functions which other modules use.</p>
 <dl class="py function">
-<dt id="kawasemi.util.Jid_to_id">
-<code class="sig-prename descclassname">kawasemi.util.</code><code class="sig-name descname">Jid_to_id</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#kawasemi.util.Jid_to_id" title="Permalink to this definition">¶</a></dt>
-<dd><p>Convert</p>
-<p>a string such as  ‘明治二十九年法律第八十九号’ to the id such as ‘129AC0000000089’</p>
+<dt id="kawasemi.util.kansuji_to_num">
+<code class="sig-prename descclassname">kawasemi.util.</code><code class="sig-name descname">kansuji_to_num</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; int<a class="reference internal" href="_modules/kawasemi/util.html#kansuji_to_num"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kawasemi.util.kansuji_to_num" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a sequence of <em>kansuji</em> to the corresponding number.</p>
+<p><em>Kansuji</em> is a representation of a number, which is used in Chinese and Japanese. This function converts a sequence of <em>kansuji</em> (a <em>kanji</em> string) to the corresponding number.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>param1</strong> (<em>int</em>) – The first parameter.</p></li>
-<li><p><strong>param2</strong> (<em>str</em>) – The second parameter.</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>True if successful, False otherwise.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>bool</p>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>x</strong><span class="classifier">str</span></dt><dd><p>A sequence of <em>kansuji</em>.</p>
 </dd>
 </dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>int</dt><dd><p>The corresponding number for a given <em>kansuji</em> string.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">kawasemi</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">kansuji_to_num</span><span class="p">(</span><span class="s1">&#39;三十五&#39;</span><span class="p">)</span>
+<span class="go">35</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">kawasemi</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">kansuji_to_num</span><span class="p">(</span><span class="s1">&#39;百六&#39;</span><span class="p">)</span>
+<span class="go">106</span>
+</pre></div>
+</div>
 </dd></dl>
 
 <dl class="py function">
-<dt id="kawasemi.util.kansuji_to_num">
-<code class="sig-prename descclassname">kawasemi.util.</code><code class="sig-name descname">kansuji_to_num</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span></em><span class="sig-paren">)</span><a class="headerlink" href="#kawasemi.util.kansuji_to_num" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dt id="kawasemi.util.lawNum_to_lawID">
+<code class="sig-prename descclassname">kawasemi.util.</code><code class="sig-name descname">lawNum_to_lawID</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">x</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; str<a class="reference internal" href="_modules/kawasemi/util.html#lawNum_to_lawID"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kawasemi.util.lawNum_to_lawID" title="Permalink to this definition">¶</a></dt>
+<dd><p>Map a law number in Japan to the corresponding law ID.</p>
+<p>Each law in Japan has its unique law number. While a law number is an identifier, the <em>number</em> is difficult for a computer to deal with because the string consists of numbers and Chinese (<em>kanji</em>) characters. On the other hand, each law has its unique filename in the Japanese e-Gov database. We call such filenames law IDs for convenience.
+This function maps a law number to the corresponding law ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>x</strong><span class="classifier">str</span></dt><dd><p>A law number in Japan.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>str</dt><dd><p>The corresponding law ID.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">kawasemi</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">lawNum_to_lawID</span><span class="p">(</span><span class="s1">&#39;明治二十九年法律第八十九号&#39;</span><span class="p">)</span>
+<span class="go">129AC0000000089</span>
+</pre></div>
+</div>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">kawasemi</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">kansuji_to_num</span><span class="p">(</span><span class="s1">&#39;昭和四十五年法律第四十八号&#39;</span><span class="p">)</span>
+<span class="go">345AC0000000048    </span>
+</pre></div>
+</div>
+</dd></dl>
 
 <dl class="py function">
 <dt id="kawasemi.util.load_model">
-<code class="sig-prename descclassname">kawasemi.util.</code><code class="sig-name descname">load_model</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lawname</span></em><span class="sig-paren">)</span><a class="headerlink" href="#kawasemi.util.load_model" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="sig-prename descclassname">kawasemi.util.</code><code class="sig-name descname">load_model</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lawname</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kawasemi/util.html#load_model"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kawasemi.util.load_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>load model.</p>
+<p>under construction</p>
+</dd></dl>
 
 <dl class="py function">
-<dt id="kawasemi.util.read_abbr">
-<code class="sig-prename descclassname">kawasemi.util.</code><code class="sig-name descname">read_abbr</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#kawasemi.util.read_abbr" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dt id="kawasemi.util.make_law2lawNum_and_law2lawID">
+<code class="sig-prename descclassname">kawasemi.util.</code><code class="sig-name descname">make_law2lawNum_and_law2lawID</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">filename</span><span class="p">:</span> <span class="n">str</span> <span class="o">=</span> <span class="default_value">None</span></em><span class="sig-paren">)</span> &#x2192; Tuple<span class="p">[</span>Dict<span class="p">[</span>str<span class="p">, </span>str<span class="p">]</span><span class="p">, </span>Dict<span class="p">[</span>str<span class="p">, </span>str<span class="p">]</span><span class="p">]</span><a class="reference internal" href="_modules/kawasemi/util.html#make_law2lawNum_and_law2lawID"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kawasemi.util.make_law2lawNum_and_law2lawID" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create two dictionaries whose keys are law names.</p>
+<p>This function creates the following two dictionaries: 
+1. a dictionary of law numbers for law names, and
+2. a dictionary of law IDs for law names, 
+where law names as keys include abbreviated forms of official law names.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>filename</strong><span class="classifier">str, optional</span></dt><dd><p>A tsv file of (law name, law number) pairs. If it is None, the function uses the tsv file “abbr.tsv” in the data/utils directory.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt><strong>law2lawNum</strong><span class="classifier">Dict[str, str]</span></dt><dd><p>A dictionary of law numbers for law names.</p>
+</dd>
+<dt><strong>law2lawID</strong><span class="classifier">Dict[str, str]</span></dt><dd><p>A dictionary of law IDs for law names.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">law2lawNum</span><span class="p">,</span> <span class="n">law2lawID</span> <span class="o">=</span> <span class="n">kawasemi</span><span class="o">.</span><span class="n">util</span><span class="o">.</span><span class="n">make_law2lawNum_and_law2lawID</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">law2lawNum</span><span class="p">[</span><span class="s1">&#39;民法&#39;</span><span class="p">]</span>
+<span class="go">明治二十九年法律第八十九号</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">law2lawID</span><span class="p">[</span><span class="s1">&#39;民法&#39;</span><span class="p">]</span>
+<span class="go">129AC0000000089</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">law2lawNum</span><span class="p">[</span><span class="s1">&#39;労働基準法&#39;</span><span class="p">]</span>
+<span class="go">昭和二十二年法律第四十九号</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">law2lawNum</span><span class="p">[</span><span class="s1">&#39;労基法&#39;</span><span class="p">]</span>
+<span class="go">昭和二十二年法律第四十九号</span>
+</pre></div>
+</div>
+</dd></dl>
 
 </div>
 <div class="section" id="module-kawasemi.xml">
 <span id="kawasemi-xml-module"></span><h2>kawasemi.xml module<a class="headerlink" href="#module-kawasemi.xml" title="Permalink to this headline">¶</a></h2>
+<p>This module contains several functions which deal with XML files and XML trees.</p>
 <dl class="py function">
 <dt id="kawasemi.xml.create_parsed_xml">
-<code class="sig-prename descclassname">kawasemi.xml.</code><code class="sig-name descname">create_parsed_xml</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">xmltree</span></em><span class="sig-paren">)</span><a class="headerlink" href="#kawasemi.xml.create_parsed_xml" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="sig-prename descclassname">kawasemi.xml.</code><code class="sig-name descname">create_parsed_xml</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">xmltree</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kawasemi/xml.html#create_parsed_xml"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kawasemi.xml.create_parsed_xml" title="Permalink to this definition">¶</a></dt>
+<dd><p>create a parsed xml.</p>
+<p>under construcion</p>
+</dd></dl>
 
 <dl class="py function">
 <dt id="kawasemi.xml.orig_XML_to_doc_obj">
-<code class="sig-prename descclassname">kawasemi.xml.</code><code class="sig-name descname">orig_XML_to_doc_obj</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tree</span></em><span class="sig-paren">)</span><a class="headerlink" href="#kawasemi.xml.orig_XML_to_doc_obj" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="sig-prename descclassname">kawasemi.xml.</code><code class="sig-name descname">orig_XML_to_doc_obj</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">tree</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kawasemi/xml.html#orig_XML_to_doc_obj"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kawasemi.xml.orig_XML_to_doc_obj" title="Permalink to this definition">¶</a></dt>
+<dd><p>convert orig to document tree.</p>
+<p>under construction</p>
+</dd></dl>
 
 <dl class="py function">
 <dt id="kawasemi.xml.read_xml">
-<code class="sig-prename descclassname">kawasemi.xml.</code><code class="sig-name descname">read_xml</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lawname</span></em>, <em class="sig-param"><span class="n">law2Jid</span></em>, <em class="sig-param"><span class="n">law2id</span></em><span class="sig-paren">)</span><a class="headerlink" href="#kawasemi.xml.read_xml" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="sig-prename descclassname">kawasemi.xml.</code><code class="sig-name descname">read_xml</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lawID</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; xml.etree.ElementTree.ElementTree<a class="reference internal" href="_modules/kawasemi/xml.html#read_xml"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kawasemi.xml.read_xml" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read an XML file for a given lawID.</p>
+<p>This function receives a lawID and returns an XML tree.
+document tree.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>lawID</strong><span class="classifier">str</span></dt><dd><p>A lawID.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>ET.ElementTree</dt><dd><p>An XML tree.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>under construction</p>
+</dd></dl>
 
 </div>
 <div class="section" id="module-kawasemi">
 <span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-kawasemi" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="kawasemi.load">
+<code class="sig-prename descclassname">kawasemi.</code><code class="sig-name descname">load</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">name</span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/kawasemi.html#load"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#kawasemi.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>load files.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>name</strong><span class="classifier">str</span></dt><dd><p>a law name.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><dl class="simple">
+<dt>kawasemi.models.Statute</dt><dd><p>Statute object.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
 </div>
 </div>
 
@@ -394,7 +556,7 @@
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
       
-        <a href="modules.html" class="btn btn-neutral float-left" title="kawasemi" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to kawasemi’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

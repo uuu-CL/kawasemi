@@ -1,0 +1,325 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>kawasemi.xml &mdash; kawasemi 0.1.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../index.html" class="icon icon-home" alt="Documentation Home"> kawasemi
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">submodules of kawasemi</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../kawasemi.html">kawasemi package</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">kawasemi</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="../index.html">Module code</a> &raquo;</li>
+        
+          <li><a href="../kawasemi.html">kawasemi</a> &raquo;</li>
+        
+      <li>kawasemi.xml</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for kawasemi.xml</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;This module contains several functions which deal with XML files and XML trees.</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">glob</span>
+<span class="kn">import</span> <span class="nn">xml.etree.ElementTree</span> <span class="k">as</span> <span class="nn">ET</span>
+<span class="kn">import</span> <span class="nn">jaconv</span>
+<span class="kn">from</span> <span class="nn">.tokens</span> <span class="kn">import</span> <span class="n">Document</span><span class="p">,</span> <span class="n">Sentence</span>
+
+<div class="viewcode-block" id="create_parsed_xml"><a class="viewcode-back" href="../../kawasemi.html#kawasemi.xml.create_parsed_xml">[docs]</a><span class="k">def</span> <span class="nf">create_parsed_xml</span><span class="p">(</span><span class="n">xmltree</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;create a parsed xml.</span>
+
+<span class="sd">    under construcion</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+
+    
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;creating parsed xml...&#39;</span><span class="p">)</span>    
+    <span class="n">doc</span> <span class="o">=</span> <span class="n">orig_XML_to_doc_obj</span><span class="p">(</span><span class="n">xmltree</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">doc</span><span class="o">.</span><span class="n">sentences</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="o">.</span><span class="n">sentences</span><span class="p">[</span><span class="mi">100</span><span class="p">]</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
+
+
+
+
+
+    
+    
+    
+    <span class="n">tree</span> <span class="o">=</span> <span class="kc">None</span>    
+    <span class="k">return</span> <span class="n">tree</span></div>
+
+<div class="viewcode-block" id="read_xml"><a class="viewcode-back" href="../../kawasemi.html#kawasemi.xml.read_xml">[docs]</a><span class="k">def</span> <span class="nf">read_xml</span><span class="p">(</span><span class="n">lawID</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">ET</span><span class="o">.</span><span class="n">ElementTree</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Read an XML file for a given lawID.</span>
+
+<span class="sd">    This function receives a lawID and returns an XML tree.</span>
+<span class="sd">    document tree.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    lawID : str</span>
+<span class="sd">      A lawID.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ET.ElementTree</span>
+<span class="sd">      An XML tree.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+
+<span class="sd">    under construction</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+    
+    <span class="n">xmlbase</span> <span class="o">=</span> <span class="n">lawID</span> <span class="o">+</span> <span class="s1">&#39;.xml&#39;</span>
+
+    <span class="c1"># Firstly, we search the data/gold/ directory for the xml file.</span>
+    <span class="n">xmldir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">),</span>
+                          <span class="s1">&#39;../../data/gold&#39;</span><span class="p">)</span>            
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">tree</span> <span class="o">=</span> <span class="n">ET</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">xmldir</span><span class="p">,</span> <span class="n">xmlbase</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;A gold annotated data used.&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">tree</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="c1"># Secondly, we search the data/generated/ directory for the xml file.</span>
+        <span class="n">xmldir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">),</span>
+                              <span class="s1">&#39;../../data/generated&#39;</span><span class="p">)</span>            
+    
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">tree</span> <span class="o">=</span> <span class="n">ET</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">xmldir</span><span class="p">,</span> <span class="n">xmlbase</span><span class="p">))</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;An automatic annotated data used.&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">tree</span>
+    <span class="k">except</span><span class="p">:</span>        
+        <span class="c1"># Thirdly, we search the data/orig/ directory for a xml file distributed in e-gov.go.jp.</span>
+        <span class="n">year</span> <span class="o">=</span> <span class="n">lawID</span><span class="p">[:</span><span class="mi">3</span><span class="p">]</span>
+        <span class="n">xml_glob</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">),</span> 
+                                <span class="s1">&#39;../../data/orig&#39;</span><span class="p">,</span>
+                                <span class="n">year</span><span class="p">,</span> <span class="n">lawID</span> <span class="o">+</span> <span class="s1">&#39;*&#39;</span><span class="p">,</span> <span class="n">lawID</span> <span class="o">+</span> <span class="s1">&#39;*.xml&#39;</span><span class="p">)</span>
+        
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">xml_glob</span><span class="p">):</span>            
+            <span class="n">orig_tree</span> <span class="o">=</span> <span class="n">ET</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+            <span class="k">break</span>
+        <span class="n">tree</span> <span class="o">=</span> <span class="n">create_parsed_xml</span><span class="p">(</span><span class="n">orig_tree</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">tree</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="c1"># Finally, we download a xml file from e-gov.go.jp.</span>
+        <span class="n">indir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">),</span> 
+                             <span class="s1">&#39;../../data/orig&#39;</span><span class="p">)</span>
+        <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://elaws.e-gov.go.jp/download/&#39;</span> <span class="o">+</span> <span class="n">year</span> <span class="o">+</span> <span class="s1">&#39;.zip&#39;</span>
+        
+    <span class="n">zipname</span> <span class="o">=</span> <span class="n">download_file</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">indir</span><span class="p">)</span>
+    <span class="n">extract_zip</span><span class="p">(</span><span class="n">zipname</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">filename</span> <span class="ow">in</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="n">xml</span><span class="o">.</span><span class="n">glob</span><span class="p">):</span>            
+        <span class="n">orig_tree</span> <span class="o">=</span> <span class="n">ET</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+        <span class="k">break</span>
+    <span class="n">tree</span> <span class="o">=</span> <span class="n">create_parsed_xml</span><span class="p">(</span><span class="n">orig_tree</span><span class="p">)</span>            
+    <span class="k">return</span> <span class="n">tree</span></div>
+
+<div class="viewcode-block" id="orig_XML_to_doc_obj"><a class="viewcode-back" href="../../kawasemi.html#kawasemi.xml.orig_XML_to_doc_obj">[docs]</a><span class="k">def</span> <span class="nf">orig_XML_to_doc_obj</span><span class="p">(</span><span class="n">tree</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;convert orig to document tree.</span>
+
+<span class="sd">    under construction</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+
+    
+    <span class="n">doc</span> <span class="o">=</span> <span class="n">Document</span><span class="p">(</span><span class="s1">&#39;dummy&#39;</span><span class="p">)</span>
+    <span class="n">root</span> <span class="o">=</span> <span class="n">tree</span><span class="o">.</span><span class="n">getroot</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">sent</span> <span class="ow">in</span> <span class="n">root</span><span class="o">.</span><span class="n">findall</span><span class="p">(</span><span class="s1">&#39;.//Sentence&#39;</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">sent</span><span class="o">.</span><span class="n">text</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span> <span class="ow">or</span> <span class="n">sent</span><span class="o">.</span><span class="n">text</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">continue</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">jaconv</span><span class="o">.</span><span class="n">h2z</span><span class="p">(</span><span class="n">sent</span><span class="o">.</span><span class="n">text</span><span class="p">,</span> <span class="n">digit</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">ascii</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>        
+        <span class="n">doc</span><span class="o">.</span><span class="n">sentences</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Sentence</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
+
+
+
+
+
+
+        
+    <span class="k">return</span> <span class="n">doc</span></div>
+    
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020, Suguru Matsuyoshi
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

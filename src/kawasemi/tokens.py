@@ -2,18 +2,18 @@ from pyknp import Juman, KNP
 
 class JNLP(object):
     '''Japanese parser class.
+
+    annotate a input text with POS tags.
     '''
+    
     def __init__(self):
         '''initialize
 
-        Args:
-          Nothing
+        Examples
+        --------
+        >>> nlp = JNLP()
+        None
 
-        Returns:
-          Nothing
-
-        Examples:
-          nlp = JNLP()
         '''
         
         self.juman = Juman()
@@ -22,14 +22,23 @@ class JNLP(object):
     def POStagger(self, text):
         '''annotate a input text with POS tags.
 
-        Args:
-          text (str): a text which should be tokenized
+        annotate a input text with POS tags.
 
-        Returns:
-          mrphs (List[str]): a list of tokens
+        Parameters
+        ----------
+        text : str
+          a text which should be tokenized
 
-        Examples:
-          a = nlp.POStagger('この文を解析します。')
+        Returns
+        -------
+        List[str]
+          a list of tokens
+
+        Examples
+        --------
+        >>>a = nlp.POStagger('この文を解析します。')
+        <object>
+
         '''
         
         result = self.juman.analysis(text)
@@ -37,6 +46,27 @@ class JNLP(object):
         return mrphs
 
     def parse(self, text):
+        '''annotate a input text with POS tags.
+
+        annotate a input text with POS tags.
+
+        Parameters
+        ----------
+        text : str
+          a text which should be tokenized
+
+        Returns
+        -------
+        List[str]
+          a list of tokens
+
+        Examples
+        --------
+        >>>a = nlp.POStagger('この文を解析します。')
+        <object>
+
+        '''
+        
         result = self.knp.parse(text)
         for bnst in result.bnst_list():
             print(bnst.bnst_id, bnst.dpndtype, bnst.parent_id, bnst.fstring)

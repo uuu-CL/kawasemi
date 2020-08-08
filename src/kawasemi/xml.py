@@ -1,9 +1,20 @@
+"""This module contains several functions which deal with XML files and XML trees.
+"""
+
 import os, glob
 import xml.etree.ElementTree as ET
 import jaconv
 from .tokens import Document, Sentence
 
 def create_parsed_xml(xmltree):
+    """create a parsed xml.
+
+    under construcion
+
+    """
+
+
+    
     print('creating parsed xml...')    
     doc = orig_XML_to_doc_obj(xmltree)
     print(len(doc.sentences))
@@ -19,13 +30,30 @@ def create_parsed_xml(xmltree):
     tree = None    
     return tree
 
-def read_xml(lawname, law2Jid, law2id):    
-    try:
-        lawid = law2id[lawname]
-    except KeyError:
-        print('You should input a valid law name in Japan.')
-        exit()
-    xmlbase = lawid + '.xml'
+def read_xml(lawID: str) -> ET.ElementTree:
+    """Read an XML file for a given lawID.
+
+    This function receives a lawID and returns an XML tree.
+    document tree.
+
+    Parameters
+    ----------
+    lawID : str
+      A lawID.
+
+    Returns
+    -------
+    ET.ElementTree
+      An XML tree.
+
+    Examples
+    --------
+
+    under construction
+
+"""
+    
+    xmlbase = lawID + '.xml'
 
     # Firstly, we search the data/gold/ directory for the xml file.
     xmldir = os.path.join(os.path.dirname(__file__),
@@ -45,10 +73,10 @@ def read_xml(lawname, law2Jid, law2id):
         return tree
     except:        
         # Thirdly, we search the data/orig/ directory for a xml file distributed in e-gov.go.jp.
-        year = lawid[:3]
+        year = lawID[:3]
         xml_glob = os.path.join(os.path.dirname(__file__), 
                                 '../../data/orig',
-                                year, lawid + '*', lawid + '*.xml')
+                                year, lawID + '*', lawID + '*.xml')
         
     try:
         for filename in glob.glob(xml_glob):            
@@ -71,6 +99,14 @@ def read_xml(lawname, law2Jid, law2id):
     return tree
 
 def orig_XML_to_doc_obj(tree):
+    """convert orig to document tree.
+
+    under construction
+
+    """
+
+
+    
     doc = Document('dummy')
     root = tree.getroot()
     for sent in root.findall('.//Sentence'):
