@@ -43,7 +43,7 @@ def read_xml(lawID: str) -> ET.ElementTree:
 
     Returns
     -------
-    ET.ElementTree
+    xml.etree.ElementTree.ElementTree
       An XML tree.
 
     Examples
@@ -116,6 +116,8 @@ def orig_XML_to_doc_obj(tree):
         doc.sentences.append(Sentence(text))
 
 
+
+        
 
 
 

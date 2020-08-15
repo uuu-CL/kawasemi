@@ -67,18 +67,18 @@ class JNLP(object):
 
         '''
         
-        result = self.knp.parse(text)
-        for bnst in result.bnst_list():
-            print(bnst.bnst_id, bnst.dpndtype, bnst.parent_id, bnst.fstring)
-            print(' '.join([mrph.midasi for mrph in bnst.mrph_list()]))
-        for tag in result.tag_list():
-            print(tag.tag_id, tag.dpndtype, tag.parent_id, tag.fstring)
-            print(' '.join([mrph.midasi for mrph in tag.mrph_list()]))
-            if tag.pas != None:
-                for key in tag.pas.arguments:
-                    arg = tag.pas.arguments[key][0]
-                    print(key)
-                    print(arg.tid, arg.eid, arg.midasi, arg.flag)
+        result = self.KNP.parse(text)
+        # for bnst in result.bnst_list():
+        #     print(bnst.bnst_id, bnst.dpndtype, bnst.parent_id, bnst.fstring)
+        #     print(' '.join([mrph.midasi for mrph in bnst.mrph_list()]))
+        # for tag in result.tag_list():
+        #     print(tag.tag_id, tag.dpndtype, tag.parent_id, tag.fstring)
+        #     print(' '.join([mrph.midasi for mrph in tag.mrph_list()]))
+        #     if tag.pas != None:
+        #         for key in tag.pas.arguments:
+        #             arg = tag.pas.arguments[key][0]
+        #             print(key)
+        #             print(arg.tid, arg.eid, arg.midasi, arg.flag)
         return result
 
 class Event(object):

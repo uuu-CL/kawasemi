@@ -1,0 +1,10 @@
+@startuml
+
+!include conf.txt
+
+actor Aさん as A <<当事者>>
+actor Bさん as B <<相手方>>
+A -> B : よる
+A -> 意思表示 : 取り消すことができる。
+
+@enduml

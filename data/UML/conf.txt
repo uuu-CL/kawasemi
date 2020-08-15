@@ -1,0 +1,12 @@
+/' !pragma teoz true '/
+skinparam dpi 100
+skinparam sequence {
+  MessageAlignment center
+  DividerBorderColor maroon
+  DividerBackgroundColor white
+}
+skinparam HeaderFontColor black
+
+!$h = "<font color=maroon><&heart></font>"
+!$under = "<font color=maroon><&data-transfer-download></font>"
+autonumber "<font color=maroon>0.</font>"
